@@ -4,4 +4,10 @@ node_js:
 
 script: skip
 
-deploy: skip
+deploy:
+  provider: releases
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  file: "./dist.tar.gz"
+  on:
+    branch: master
